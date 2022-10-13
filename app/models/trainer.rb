@@ -1,4 +1,4 @@
 class Trainer < ApplicationRecord
-  has_one :yoga
-  has_many :trainees, through: :yoga
+  has_many :yogas
+  has_many :trainees, through: :yogas
 end
