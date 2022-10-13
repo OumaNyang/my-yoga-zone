@@ -12,7 +12,7 @@ class YogaController < ApplicationController
   end
   
   def show
-    yoga=Yoga.find_by(id: params[:id)
+    yoga=Yoga.find_by(id: params[:id])
     render json: yoga, status: :ok
   end
 

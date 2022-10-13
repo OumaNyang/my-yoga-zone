@@ -6,7 +6,7 @@ render json:trainer, status: :ok
 end
 
 def show
-trainer=Trainer.find_by(id: params[:id)
+trainer=Trainer.find_by(id: params[:id])
 render json:trainer, status: :ok
 end
 

@@ -6,7 +6,7 @@ class TraineeController < ApplicationController
   end
   
   def show
-  trainee=Trainee.find_by(id: params[:id)
+  trainee=Trainee.find_by(id: params[:id])
   render json:trainee, status: :ok
   end
   
