@@ -6,8 +6,12 @@ class TraineeController < ApplicationController
   end
   
   def show
-  trainee=Trainee.find_by(id: params[:id])
-  render json:trainee, status: :ok
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
   
   private

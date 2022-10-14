@@ -5,4 +5,9 @@ class SessionsController < ApplicationController
     session[:trainee_id] = trainee.id
     render json: trainee
   end
+  def destroy
+    session.delete :user_id
+    head :no_content
+  end
+
 end

@@ -12,14 +12,14 @@ class YogaController < ApplicationController
   end
   
   def show
-    yoga=Yoga.find_by(id: params[:id])
+    yoga=Yoga.find_by!(id: params[:id])
     render json: yoga, status: :ok
   end
 
   def update
-    yoga=Yoga.find_by(id: params[:id])
+    yoga=Yoga.find_by!(id: params[:id])
     yoga.update(yoga_params)
-    render json: yoga
+    render json: yoga, exception: [:created_at, :updated_at], status: :ok
   end
 
   def destroy

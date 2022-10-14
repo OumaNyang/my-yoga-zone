@@ -120,6 +120,7 @@ yoga_id: 2
 ])
 
 
+
 Yoga.create!( [
   {name: "Mountain Pose",
   url: "https://www.youtube.com/watch?v=v7AYKMP6rOE",

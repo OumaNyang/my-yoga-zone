@@ -19,16 +19,22 @@ const App = () => {
 <div className='container' style={{background:"#dede"}}> 
 <Breadcrumbs/>
 {/* <YogaTutorials/> */}
-{/* <AddYogaTutorials/> */}
+<AddYogaTutorials/>
 {/* <Login /> */}
-<Signup/>
+{/* <Signup/> */}
+<Router>
+    <routes>
+        <route path="./" component={YogaTutorials}>
 
+        </route>
+    </routes>
+</Router>
 <Footer/>
 </div>
 
 <Router>
 <Routes>
-<Route to="./reviews" component={Reviews} />
+<Route path="/reviews" element={<Reviews/>} />
 </Routes>
 </Router>
 </>
