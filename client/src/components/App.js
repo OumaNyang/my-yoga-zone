@@ -25,7 +25,7 @@ function App() {
       });
   }, []);
 
-  //  if (!user) return <Login onLogin={setUser} />;
+   if (!user) return <Login onLogin={setUser} />;
   
   return (
     <>

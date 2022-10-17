@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 function SignUpForm() {
 const [username, setUsername] = useState("");
 const [email, setEmail] = useState("");
+const [name, setName] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPasword, setConfirmPassword] = useState("");
 const [errors, setErrors] = useState([]);
@@ -15,6 +16,10 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
+if(password!==confirmPasword){
+alert('Passwords do not match ')
+return false 
+}else {
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -23,6 +28,7 @@ const [isLoading, setIsLoading] = useState(false);
       body: JSON.stringify({
         username,
         email,
+        password,
         password
       }),
     }).then((r) => {
@@ -35,6 +41,7 @@ const [isLoading, setIsLoading] = useState(false);
         r.json().then((err) => setErrors(err.errors));
       }
     });
+  }
   }
 
 
@@ -58,7 +65,10 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
 <h6 className='alert alert-info rounded-0'>Please create your user account</h6>
       <div className='card-body'>
         <form  onSubmit={handleSubmit} method="post">
-         
+        <div className='form-group'>
+          <label>Name</label>
+          <input type="text" onChange={(e) => setName(e.target.value)} value={name} id='name' required className='form-control' />
+          </div>
           <div className='form-group'>
           <label>Username</label>
           <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} id='username' required className='form-control' />
@@ -75,8 +85,7 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
             </div>
              <div className='form-group mt-4 justify-content-right'>
            <button  type='submit' className='btn btn-md  btn-block '>SignUp</button>
-            
-             </div> 
+            </div> 
         </form> 
         <div>
             {errors.map((err) => (

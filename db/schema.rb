@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2022_10_12_135604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "trainees", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "username"
     t.string "email"
     t.string "password_digest"
@@ -26,14 +27,24 @@ ActiveRecord::Schema.define(version: 2022_10_12_135604) do
   create_table "trainers", force: :cascade do |t|
     t.string "name"
     t.string "gender"
+    t.string "email"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "yogas", force: :cascade do |t|
+  create_table "tutorials", force: :cascade do |t|
     t.string "name"
-    t.string "url"
+    t.string "name"
+    t.string "description"
     t.integer "trainer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "tutorial_id"
+    t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
