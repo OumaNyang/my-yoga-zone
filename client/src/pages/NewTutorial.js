@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import "../App.css"
+import axios from 'axios';
+
 
 function  NewTutorial () {
     const [name, setName] = useState("");
@@ -7,13 +9,13 @@ function  NewTutorial () {
     const [url, setUrl] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [trainerID, setTrainerId] = useState(session[id]);
+    // const [trainerID, setTrainerId] = useState(session[id]);
 
     function handleSubmit(e) {
       e.preventDefault();
       setErrors([]);
       setIsLoading(true);
-      fetch("/yoga", {
+      fetch("/tutorials", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

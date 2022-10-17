@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 // import { Link } from 'react-router-dom'
-function SignUpForm() {
+function SignUpForm({onLogin}) {
 const [username, setUsername] = useState("");
 const [email, setEmail] = useState("");
 const [name, setName] = useState("");
@@ -15,7 +15,7 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-if(password!==confirmPasword){
+if(password!==password_confirmation){
 alert('Passwords do not match ')
 return false 
 }else {
@@ -41,7 +41,6 @@ return false
     });
   }
   }
-
   return ( 
  <div className="container">
   <div className='row'>
@@ -50,14 +49,10 @@ return false
   opacity:"0.4",
   backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-black-curvy-lady-at-yoga-class-vector-32749506.webp)"  }}>
   <h1 style={{fontWeight:"900",padding:"30px"}} >YOGA ZONE</h1>
-
   </div>
   <div className='col-md-4'>
-
   <div className="login-card"> 
-
     <div className='card'>
-
 <h6 className='alert alert-info rounded-0'>Please create your user account</h6>
       <div className='card-body'>
         <form  onSubmit={handleSubmit} method="post">
@@ -77,10 +72,10 @@ return false
             <input type="text" required name='password' onChange={(e) => setPassword(e.target.value)} value={password} className='form-control' />
             </div> <div className='form-group'>
             <label>Confirm Password</label>
-            <input type="text" onChange={(e) => setConfirmPassword(e.target.confirmPasword)} value={confirmPasword} id='confirmPassword' required className='form-control' />
+            <input type="text" onChange={(e) => setConfirmPassword(e.target.password_confirmation)} value={password_confirmation} id='confirmPassword' required className='form-control' />
             </div>
              <div className='form-group mt-4 justify-content-right'>
-           <button  type='submit' className='btn btn-md  btn-block '>SignUp</button>
+           <button  type='submit' className='btn btn-md  btn-block '> {isLoading ? "Loading..." : "SignUp"}</button>
             </div> 
         </form> 
         <div>

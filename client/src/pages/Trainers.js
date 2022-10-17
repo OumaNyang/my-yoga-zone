@@ -1,9 +1,9 @@
 import { useState,useEffect } from 'react';
 import { Container } from 'react-bootstrap';
+import axios from 'axios';
+
 // import { useHistory } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
-
 import { FaUser,FaEnvelope,FaMap } from 'react-icons/fa';
 
 function Trainers() {

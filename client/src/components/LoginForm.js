@@ -1,14 +1,14 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-const Login = (onLogin) =>{ 
+// import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+// import { Link } from 'react-router-dom';
+const Login = ({onLogin}) =>{ 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const [errors, setErrors] = useState([]);
 const [isLoading, setIsLoading] = useState(false);
-const [showLogin, setShowLogin] = useState(true);
+// const [showLogin, setShowLogin] = useState(true);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +29,6 @@ const [showLogin, setShowLogin] = useState(true);
     });
   }
   
-
   return ( 
     <div className="container">
 
@@ -63,9 +62,10 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
             </div> 
         </form> 
         <div>
-            {errors.map((err) => (
-            <div className='alert alert-danger'key={err}>{err}</div>
-            ))}
+        {errors.map((err) => (
+         <div className='alert alert-danger'key={err}>{err}</div>
+        ))}
+            
             </div>
       </div>
       </div>
