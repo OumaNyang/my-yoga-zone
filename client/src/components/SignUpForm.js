@@ -75,8 +75,8 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
             </div>
              <div className='form-group mt-4 justify-content-right'>
            <button  type='submit' className='btn btn-md  btn-block '>SignUp</button>
-        
-            </div> 
+            
+             </div> 
         </form> 
         <div>
             {errors.map((err) => (
