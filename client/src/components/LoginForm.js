@@ -1,15 +1,8 @@
 import { useState } from "react";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-
-// import {useState}from "react";
-// import Login from "components/Login"
-// import Signup from "components.Signup"
-
 const Login = (onLogin) =>{ 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");

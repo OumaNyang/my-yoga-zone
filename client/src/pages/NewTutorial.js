@@ -7,7 +7,8 @@ function  NewTutorial () {
     const [url, setUrl] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-  
+    const [trainerID, setTrainerId] = useState(session[id]);
+
     function handleSubmit(e) {
       e.preventDefault();
       setErrors([]);

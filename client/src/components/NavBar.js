@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+
 function NavBar({ setUser, user }) {
   
   function handleLogoutClick() {
-    fetch('/api/logout', { method: "DELETE" })
+    fetch('/logout', { method: "DELETE" })
       .then(r => {
         if (r.ok) {
           setUser(null);
@@ -28,9 +30,9 @@ function NavBar({ setUser, user }) {
       <Nav.Link ><Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/trainees">Trainees</Link></Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link >WELCOME KAREN</Nav.Link>
+      <Nav.Link >WELCOME {user.name}</Nav.Link>
     
-      <Nav.Link ><Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/profile">MY PROFILE</Link></Nav.Link>
+      <Nav.Link ><Button style={{ color: 'inherit', textDecoration: 'inherit'}} to="#" onClick={handleLogoutClick}>MY PROFILE</Button></Nav.Link>
     <Nav.Link  >
      LOGOUT
     </Nav.Link>
