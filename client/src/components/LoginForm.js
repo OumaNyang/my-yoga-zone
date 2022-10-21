@@ -42,7 +42,7 @@ const [isLoading, setIsLoading] = useState(false);
             </div>
              <div className='form-group'>
             <label>Password</label>
-            <input type="text" required name='password' onChange={(e) => setPassword(e.target.value)}  className='form-control' />
+            <input type="password" required name='password' onChange={(e) => setPassword(e.target.value)}  className='form-control' />
             </div>
              <div className='form-group mt-4 justify-content-right'>
            <button type='submit' className='btn btn-md  btn-block '>{isLoading ? "Loading..." : "Login"}</button>
