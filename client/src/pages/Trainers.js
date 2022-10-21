@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { FaUser,FaEnvelope,FaMap } from 'react-icons/fa';
 
-function Trainers() {
+function Trainers(user) {
 
     const [trainers, setTrainers] = useState([]);
 

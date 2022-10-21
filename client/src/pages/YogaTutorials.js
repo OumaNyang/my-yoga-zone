@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
+import {Card,Container,Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-function YogaTutorials (){
+function YogaTutorials (user){
   
 const [tutorials, setTutorials] = useState([]);
+const [success, setSuccess] = useState([]);
+const [errors, setErrors] = useState([]);
 
 useEffect(() => {
   fetch("/tutorials")
@@ -12,11 +14,34 @@ useEffect(() => {
       .then(setTutorials);
   }, []);
 
+
+  function handleDelete(id) {
+    (this).preventDefault();
+    fetch(`tutorials/${id}`, { method: "DELETE" 
+  }).then((res) => {
+    if (res.ok) {
+      res.json().then((msg) => setSuccess(msg.success));
+    } else {
+      res.json().then((err) => setErrors(err.errors));
+    }
+  });
+}
+
 return (
-    <div className='row'>
+  <Container>
+        <div className='row'>
         <br></br>
     <h3 className='text-center text-primary rounded-0'> Yoga Tutorials</h3>
           <hr></hr>
+          
+        {errors?.map((err) => (
+         <div className='alert alert-danger rounded-0'key={err}>{err}</div>
+        ))}
+
+         {success?.map((msg) => (
+         <div className='alert alert-success rounded-0'key={msg}>{msg}</div>
+        ))}
+
           {tutorials.length > 0 ? (
         tutorials.map((tutorial) => (
     <div className="col-md-4 mt-4"key={tutorial.id} >
@@ -37,14 +62,15 @@ return (
     {tutorial.description}
     </Card.Text>
     <Button className='rounded-0 btn btn-dark btn-md' variant="primary">Rate</Button>
-    <Button className='rounded-0 btn btn-primary btn-md' variant="primary">Watch</Button>
+    <Button   onClick={(e)=>handleDelete(tutorial.id)} className='rounded-0 btn btn-danger btn-md' variant="primary">Delete</Button>
     </Card.Body>
     </Card>
     </div>
    ))):(
-<h5>No Tutorials Found</h5>
+    <div className={'alert alert-primary rounded-0'}>No yoga tutorials found</div>
    )}
       </div>
+   </Container>
  
   );
 };

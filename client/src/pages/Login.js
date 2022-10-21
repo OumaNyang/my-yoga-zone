@@ -6,16 +6,11 @@ function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="container">
-
-    <div className='row'>
-      <div className='col-md-8' style={{
-        backgroundColor:"#dede",
-        opacity:"0.1",
-    backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-black-curvy-lady-at-yoga-class-vector-32749506.webp)"  }}>
-      </div>
-   
-
-                {
+    <div className='row justify-content-center'>
+  <div className='col-md-6 mt-4' style={{  backgroundColor:"#dede"  }} >
+  <h2 className='text-center mt-4 font-weight-bold'>MY YOGA ZONE</h2>
+  <div className='alert alert-info rounded-0'>Get all your yoga lessons at the comfort of your home.</div>
+       {
         showLogin
         ? (
             <>
@@ -35,9 +30,13 @@ function Login({ onLogin }) {
                 Already have an account? &nbsp;
                 <button className='btn   btn-block btn-light text-primary ' onClick={() => setShowLogin(true)}>Log In</button>
               </p>
+       
             </>
+           
         )
       }
+  </div>
+      <div className='col-m-6'>  </div>
 </div>
 </div>
 

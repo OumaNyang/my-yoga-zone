@@ -30,13 +30,10 @@ function NavBar({ setUser, user }) {
       <Nav.Link ><Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/trainees">Trainees</Link></Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link >WELCOME {user.name}</Nav.Link>
-    
-      <Nav.Link ><Button style={{ color: 'inherit', textDecoration: 'inherit'}} to="#" onClick={handleLogoutClick}>MY PROFILE</Button></Nav.Link>
-    <Nav.Link  >
-     LOGOUT
-    </Nav.Link>
-    </Nav>
+      <Nav.Link >WELCOME {(user.name).toUpperCase()}</Nav.Link>
+     <Nav.Link  > <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/profile">My Profile</Link></Nav.Link>
+      <Nav.Link ><Button onClick={handleLogoutClick}>LOGOUT</Button></Nav.Link>
+       </Nav>
   </Navbar.Collapse>
 </Container>
 </Navbar>

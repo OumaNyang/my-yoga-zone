@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/tutorials', to: 'tutorials#index'
   get '/tutorials/:id', to: 'tutorials#show'
   post '/tutorials', to: 'tutorials#create'
+  delete '/tutorials/:id', to: 'tutorials#destroy'
 
   resources :reviews , only: [:index,:create]
 end

@@ -27,19 +27,7 @@ const [isLoading, setIsLoading] = useState(false);
       }
     });
   }
-  
-  return ( 
-    <div className="container">
-
-  <div className='row'>
-  <div className='col-md-8' style={{
-    backgroundColor:"#dede",
-    opacity:"0.1",
-backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-black-curvy-lady-at-yoga-class-vector-32749506.webp)"  }}>
-<h1 style={{fontWeight:"900",padding:"30px"}} >YOGA ZONE</h1>
-
-  </div>
-  <div className='col-md-4'>
+ return ( 
 
   <div className="login-card"> 
 
@@ -54,7 +42,7 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
             </div>
              <div className='form-group'>
             <label>Password</label>
-            <input type="text" required name='password' onChange={(e) => setPassword(e.target.value)}  className='form-control' />
+            <input type="password" required name='password' onChange={(e) => setPassword(e.target.value)}  className='form-control' />
             </div>
              <div className='form-group mt-4 justify-content-right'>
            <button type='submit' className='btn btn-md  btn-block '>{isLoading ? "Loading..." : "Login"}</button>
@@ -72,10 +60,7 @@ backgroundImage:"url(https://cdn.vectorstock.com/i/1000x1000/95/06/plus-size-bla
       </div>
           
       </div>
-    </div>
- 
-</div>
-</div>
+
   );
 }
 

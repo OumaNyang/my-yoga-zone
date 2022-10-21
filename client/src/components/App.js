@@ -29,14 +29,14 @@ function App() {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-      <Container style={{background:"#dede"}} >
+      <Container  user={user} setUser={setUser} style={{background:"#dede"}} >
       <Routes>
-        <Route exact  path="/add-tutorial" element={<NewTutorial/>}/>
-        <Route path="/" element={<YogaTutorials/>}/>
-        <Route path="/yoga-tutorials" element={<YogaTutorials/>}/>
-        <Route path="/trainers" element={<Trainers/>}/>
-        <Route path="/trainees" element={<Trainees/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route exact  path="/add-tutorial" user={user} setUser={setUser} element={<NewTutorial/>}/>
+        <Route path="/" user={user} setUser={setUser} element={<YogaTutorials/>}/>
+        <Route path="/yoga-tutorials" user={user} setUser={setUser} element={<YogaTutorials/>}/>
+        <Route path="/trainers" user={user} setUser={setUser} element={<Trainers/>}/>
+        <Route path="/trainees" user={user} setUser={setUser} element={<Trainees/>}/>
+        <Route path="/profile" user={user} setUser={setUser}  element={<Profile/>}/>
       </Routes>
       <Footer/>
       </Container>
