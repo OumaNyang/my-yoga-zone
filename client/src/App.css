@@ -1,0 +1,126 @@
+body{
+
+  background: url("https://images.news18.com/ibnlive/uploads/2022/04/yoga-164923092416x9.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.login-card{
+/* width: 100%; */
+/* height: 60em;
+margin: 0 ;
+top: 0; */
+margin-top: 60px; 
+padding: 5px;
+
+
+}
+
+.login-card .card{
+  /* width: 40%; */
+  margin: auto;
+  margin-top: 50px;
+
+}
+/* .login-container .card button{
+margin-right:40em;
+margin-left: 50px;
+
+} */
+
+.login-card .card input{
+ border-radius: 25px;
+border:1px solid rgb(104, 47, 238);
+}
+.login-card .card input:focus{
+  border-radius: 25px;
+ border:1px solid rgb(104, 47, 238);
+ box-shadow: none;
+ }
+ .login-card .card button{
+  color: #ffff;
+  border-radius: 25px;
+ background: rgb(104, 47, 238);
+ box-shadow: none;
+ width:8em;
+ margin-right: 15px;
+ }
+
+ .form-control {
+  border:1px solid rgb(8, 8, 8);
+  border-radius: 0px;
+  
+ }
+ .form-control:focus {
+  border:1px solid blueviolet;
+  box-shadow: none;
+ }
+ .save-button{
+  margin: auto;
+align-self: baseline;
+color: #ffff;
+width: 40%;
+height: 2.2em;
+background: blueviolet;
+border-radius: 25px;
+border: none;
+font-weight: 700;
+
+ }
+ .Background {
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(185, 75%, 39%);
+}
+
+.ProfileCard {
+  width: 350px;
+  border-radius: 20px !important;
+  border: none !important;
+}
+
+.ProfileCardBody {
+  padding-top: 3.5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.ProfileCardBackgroundImage {
+  width: 350px;
+  height: 140px;
+  border-top-left-radius: 15px  !important;
+  border-top-right-radius: 15px !important;
+}
+
+.ProfileCardImage {
+  width: 96px !important;
+  height: 96px !important;
+  margin: auto;
+  position: absolute;
+  top: 84px;
+  left: 127px;
+  border: 5px white solid;
+  border-radius: 48px !important;
+}
+
+.TextMuted {
+  font-weight: 400;
+  color: hsl(0, 0%, 59%);
+}
+
+.TextBold {
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.CardFooter {
+  background-color: white !important;
+  border-bottom-left-radius: 15px  !important;
+  border-bottom-right-radius: 15px !important;
+}
+
+.FooterP {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
