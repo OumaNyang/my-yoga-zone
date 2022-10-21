@@ -1,42 +1,46 @@
 import {React,useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FaUser,FaEnvelope,FaMap } from 'react-icons/fa';
 
-function Profile({ setUser, user }) {
+function Profile({user}) {
   return (
+
+
       <div className="container">
-      <h3 className='text-center text-primary'>MY PROFILE</h3>
+      <h3 className='text-center text-primary'>My Profile</h3>
      <hr></hr>
 
-
-    <div className="row d-flex justify-content-center align-items-center h-100">
-      <div className="col col-md-9 col-lg-7 col-xl-5">
-        <div className="card" style={{borderBadius: "15px"}}>
-          <div className="card-body p-4">
-            <div className="d-flex text-black">
-              <div className="flex-shrink-0">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                  alt="Generic placeholder image" className="img-fluid"
-                  style={{width:" 180px",borderRadius: "10px"}}/>
-              </div>
-              <div className="flex-grow-1 ms-3">
-                <h5 className="mb-1"> </h5>
-                <p className="mb-2 pb-1" style={{color:"#2b2a2a"}}>Trainee</p>
-                <div className="d-flex justify-content-start rounded-3 p-2 mb-2"
-                  style={{backgroundColor: "#efefef"}}>
-                  <div>
-                    <p className="small text-muted mb-1">Reviews</p>
-                    <p className="mb-0">8.5</p>
-                  </div>
+<div className="row justify-content-center">
+     <div className="col-md-8 mt-2">
+          <div className="card" style={{borderBadius: "15px"}}>
+            <div className="card-body">
+              <div className="d-flex text-black">
+           
+                <div className="flex-grow-1  ">
+                  <h5 className="mb-1 text-primary"><FaUser /> {user.name} </h5>
+                  <div className="d-flex justify-content-start rounded-3 p-2 mb-2"
+                    style={{backgroundColor: "#efefef"}}>
+                
                 </div>
-                <div className="d-flex pt-1">
-                  <button type="button" className="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
+                <div className="d-flex">
+                  <p className="small "> <strong>Role</strong>  <span>Trainee</span> </p>
+                  </div>
+                <div className="d-flex">
+                  <p className="small "> <strong>Username</strong>  <span>{user.username}</span> </p>
+                  </div>
+                  <div className="d-flex">
+                  <p className="small "> <strong>Email</strong>  <span>{user.email}</span> </p>
+                  </div>
+                  <div className="d-flex ">
+                  <p className="small"> <strong>Trainer:</strong>  <span> </span> </p>
+                  </div>
+               <div className='alert alert-info rounded-0'>You have not booked a trainer .Please book a trainer  to have exclusive access to all trainer lessons.</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
 
     </div>
   );

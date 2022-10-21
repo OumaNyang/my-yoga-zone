@@ -4,15 +4,15 @@ class UsersController < ApplicationController
         # def create
         #   user = User.create!(user_params)
         #   session[:user_id] = user.id
-        #   render json:, status: :created
+        #   render json:  status: :created
         # end
 
         def create
           user = User.create(user_params)
-          if user.valid?
+          if user 
           # render json: {success:["User account created"]}, status: :created
-          session[:user_id] = user.id
-
+        session[:user_id] = user.id
+         render json:user, status: :created
           else 
             render json: {errors: [user.errors.full_messages] }, status: :unprocessable_entity
           end

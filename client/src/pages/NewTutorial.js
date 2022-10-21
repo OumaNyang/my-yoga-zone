@@ -57,17 +57,18 @@ function  NewTutorial ({user,trainers}) {
             </div>
             <div className='form-group'>
             <label>Trainer</label>
-            <input disabled required onChange={(e) => setTrainerId(e.target.value)} value={user} type="text" id='trainer_id'  className='form-control' />
+            {/* <input disabled required onChange={(e) => setTrainerId(e.target.value)} value={user.id} type="text" id='trainer_id'  className='form-control' /> */}
 
-{/* 
             <select required onChange={(e) =>setTrainerId(e.target.value)}   id="trainer_id"  className='form-control' >
+             <option value={""}> </option>
+
             {trainers.length > 0 ? (
             trainers.map((trainer) => (
-            <option value={trainer.id} key={trainer.id}>{trainer.name}</option>
-            ))):(
-            <option value={1}>No trainers found</option>
+             <option value={trainer.id} key={trainer.id}>{trainer.name}</option>
+             ))):(
+            <option value={""}>No trainers found</option>
             )}
-            </select> */}
+            </select>
             </div>
         
            <div className='form-group mt-4 justify-content-right'>
@@ -78,17 +79,13 @@ function  NewTutorial ({user,trainers}) {
              {errors?.map((err) => (
          <div className='alert alert-danger rounded-0'key={err}>{err}</div>
         ))}
-
          {success?.map((msg) => (
          <div className='alert alert-success rounded-0'key={msg}>{msg}</div>
         ))}
 
-
-            </div>
+          </div>
         </form>
         </div>
- 
-
     );
 }
 export default NewTutorial;

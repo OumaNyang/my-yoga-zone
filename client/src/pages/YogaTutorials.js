@@ -15,8 +15,7 @@ useEffect(() => {
   }, []);
 
 
-  function handleDelete(id) {
-    (this).preventDefault();
+  function onDelete (id) {
     fetch(`tutorials/${id}`, { method: "DELETE" 
   }).then((res) => {
     if (res.ok) {
@@ -62,7 +61,9 @@ return (
     {tutorial.description}
     </Card.Text>
     <Button className='rounded-0 btn btn-dark btn-md' variant="primary">Rate</Button>
-    <Button   onClick={(e)=>handleDelete(tutorial.id)} className='rounded-0 btn btn-danger btn-md' variant="primary">Delete</Button>
+    <Button  onClick={() => {if(window.confirm(`Delete ${tutorial.name} from records?`)){
+onDelete(tutorial.id)};}} 
+ className='rounded-0 btn btn-danger btn-md' variant="primary">Delete</Button>
     </Card.Body>
     </Card>
     </div>
